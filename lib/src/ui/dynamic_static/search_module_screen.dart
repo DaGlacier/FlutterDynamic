@@ -49,8 +49,8 @@ class _SearchModuleScreenState extends State<SearchModuleScreen> {
                         hintText: "Search item",
                         suffixIcon: Icon(Icons.search),
                         contentPadding: EdgeInsets.symmetric(
-                          vertical: 12,
-                          horizontal: 12,
+                          vertical: 10,
+                          horizontal: 10,
                         ))),
                 (p0) => null)),
       ),

@@ -51,12 +51,12 @@ class AlertUtil {
                                 Icons.info_outline,
                                 color:
                                     APIService.appPrimaryColor.withOpacity(.4),
-                                size: 28,
+                                size: 24,
                               )
                             : const Icon(
                                 Icons.error_outline,
                                 color: Colors.redAccent,
-                                size: 28,
+                                size: 24,
                               )
                         : const SizedBox()
                   ],
@@ -70,7 +70,7 @@ class AlertUtil {
                             child: Text(
                           message,
                           style: const TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.normal),
+                              fontSize: 16, fontWeight: FontWeight.normal),
                           textAlign: TextAlign.center,
                         )),
                         const SizedBox(
@@ -98,6 +98,7 @@ class AlertUtil {
                                       cancelButtonText,
                                       style: TextStyle(
                                           fontSize: 18,
+                                          fontWeight: FontWeight.bold,
                                           color: APIService.appSecondaryColor),
                                     ).tr()),
                                 const SizedBox(
@@ -114,6 +115,7 @@ class AlertUtil {
                             confirmButtonText,
                             style: const TextStyle(
                               fontSize: 18,
+                              fontWeight: FontWeight.bold,
                             ),
                           ).tr()),
                     ],

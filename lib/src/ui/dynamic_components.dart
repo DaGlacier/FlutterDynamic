@@ -192,7 +192,7 @@ class _DynamicTextFormFieldState extends State<DynamicTextFormField> {
           controller: controller,
           textInputType: inputType,
           maxLength: formItem?.maxLength,
-          maxLines: formItem?.maxLines,
+          // maxLines: formItem?.maxLines,
           inputDecoration: InputDecoration(
               // border: const OutlineInputBorder(),
               isDense: true,
@@ -203,7 +203,7 @@ class _DynamicTextFormFieldState extends State<DynamicTextFormField> {
               //         vertical: formItem?.verticalPadding ?? 9, horizontal: 10)
               //     : null
             contentPadding: const EdgeInsets.symmetric(
-                vertical: 30.0, horizontal: 10.0),
+                vertical: 9.0, horizontal: 10.0),
 
           ),
           isAmount: formItem?.controlFormat == ControlFormat.Amount.name);
@@ -860,8 +860,7 @@ class _DropDownState extends State<DropDown> {
                     value: _currentValue,
                     decoration: InputDecoration(
                       labelText: formItem?.controlText,
-                      contentPadding:
-                          EdgeInsets.symmetric(vertical: 9.0, horizontal: 10.0),
+                      contentPadding: EdgeInsets.symmetric(vertical: 9.0, horizontal: 10.0),
                     ),
                     isExpanded: true,
                     style: const TextStyle(fontWeight: FontWeight.normal),
@@ -1463,7 +1462,7 @@ class _DynamicLinkedContainerState extends State<DynamicLinkedContainer> {
                     inputDecoration: InputDecoration(hintText: formItem?.controlText,
                       isDense: true,
                       contentPadding: const EdgeInsets.symmetric(
-                        vertical: 30.0, horizontal: 10.0),)),
+                        vertical: 9.0, horizontal: 10.0),)),
                 (string) {
               Provider.of<PluginState>(context, listen: false).addFormInput(
                   {"${formItem?.serviceParamId}": _controller.text});
