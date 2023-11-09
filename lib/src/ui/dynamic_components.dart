@@ -1460,8 +1460,10 @@ class _DynamicLinkedContainerState extends State<DynamicLinkedContainer> {
                 TextFormFieldProperties(
                     controller: _controller,
                     textInputType: TextInputType.name,
-                    inputDecoration:
-                        InputDecoration(hintText: formItem?.controlText)),
+                    inputDecoration: InputDecoration(hintText: formItem?.controlText,
+                      isDense: true,
+                      contentPadding: const EdgeInsets.symmetric(
+                        vertical: 9.0, horizontal: 10.0),)),
                 (string) {
               Provider.of<PluginState>(context, listen: false).addFormInput(
                   {"${formItem?.serviceParamId}": _controller.text});

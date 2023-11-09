@@ -34,7 +34,7 @@ class IOSTextFormField implements ITextFormField {
       keyboardType: properties.textInputType,
       obscureText: properties.isObscured,
       decoration: properties.boxDecoration,
-      style: const TextStyle(fontSize: 16),
+      style: const TextStyle(fontSize: 16,),
       validator: validator,
       onChanged: properties.onChange,
       inputFormatters: properties.isAmount ? [CurrencyInputFormatter()] : null,
