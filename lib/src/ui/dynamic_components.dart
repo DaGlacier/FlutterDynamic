@@ -198,10 +198,14 @@ class _DynamicTextFormFieldState extends State<DynamicTextFormField> {
               isDense: true,
               labelText: formItem?.controlText,
               suffixIcon: textFieldParams['suffixIcon'],
-              contentPadding: formItem?.verticalPadding != null
-                  ? EdgeInsets.symmetric(
-                      vertical: formItem?.verticalPadding ?? 9, horizontal: 10)
-                  : null),
+              // contentPadding: formItem?.verticalPadding != null
+              //     ? EdgeInsets.symmetric(
+              //         vertical: formItem?.verticalPadding ?? 9, horizontal: 10)
+              //     : null
+            contentPadding: const EdgeInsets.symmetric(
+                vertical: 9.0, horizontal: 10.0),
+
+          ),
           isAmount: formItem?.controlFormat == ControlFormat.Amount.name);
 
       return WidgetFactory.buildTextField(context, properties, validator);
