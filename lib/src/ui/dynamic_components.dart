@@ -192,12 +192,13 @@ class _DynamicTextFormFieldState extends State<DynamicTextFormField> {
           controller: controller,
           textInputType: inputType,
           maxLength: formItem?.maxLength,
-          // maxLines: formItem?.maxLines,
+          maxLines: formItem?.maxLines,
           inputDecoration: InputDecoration(
               // border: const OutlineInputBorder(),
               isDense: true,
+              hintText: "NOMA",
               labelText: formItem?.controlText,
-              suffixIcon: textFieldParams['suffixIcon'],
+              // suffixIcon: textFieldParams['suffixIcon'],
               // contentPadding: formItem?.verticalPadding != null
               //     ? EdgeInsets.symmetric(
               //         vertical: formItem?.verticalPadding ?? 9, horizontal: 10)
