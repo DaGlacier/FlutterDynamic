@@ -183,27 +183,25 @@ class _DynamicTextFormFieldState extends State<DynamicTextFormField> {
       }
 
       var properties = TextFormFieldProperties(
-          // isEnabled: formFieldValue.isNotEmpty ||
-          //         linkedToControlText.isNotEmpty ||
-          //         isEnabled
-          //     ? false
-          //     : true,
-          // isObscured: isObscured ? state.obscureText : false,
+          isEnabled: formFieldValue.isNotEmpty ||
+                  linkedToControlText.isNotEmpty ||
+                  isEnabled
+              ? false
+              : true,
+          isObscured: isObscured ? state.obscureText : false,
           controller: controller,
           textInputType: inputType,
-          // maxLength: formItem?.maxLength,
-          // maxLines: formItem?.maxLines,
+          maxLength: formItem?.maxLength,
+          maxLines: formItem?.maxLines,
           inputDecoration: InputDecoration(
               // border: const OutlineInputBorder(),
               isDense: true,
-              // labelText: formItem?.controlText,
-              // suffixIcon: textFieldParams['suffixIcon'],
-              // contentPadding: formItem?.verticalPadding != null
-              //     ? EdgeInsets.symmetric(
-              //         vertical: formItem?.verticalPadding ?? 9, horizontal: 10)
-              //     : null
-            contentPadding: const EdgeInsets.symmetric(
-                vertical: 9.0, horizontal: 10.0),
+              labelText: formItem?.controlText,
+              suffixIcon: textFieldParams['suffixIcon'],
+              contentPadding: formItem?.verticalPadding != null
+                  ? EdgeInsets.symmetric(
+                      vertical: formItem?.verticalPadding ?? 9.0, horizontal: 10.0)
+                  : null
 
           ),
           isAmount: formItem?.controlFormat == ControlFormat.Amount.name);

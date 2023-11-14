@@ -107,6 +107,7 @@ class _RadioWidgetListState extends State<RadioWidgetList> {
   List<FormItem> chipChoices = [];
   List<FormItem> rButtonForms = [];
   int? _value = 0;
+  int selectedValue = 0;
 
   @override
   void initState() {
@@ -126,30 +127,44 @@ class _RadioWidgetListState extends State<RadioWidgetList> {
           flex: 1,
           child: Container(
               margin: const EdgeInsets.only(right: 2),
-              child: ChoiceChip(
-                side: _value == index
-                    ? null
-                    : BorderSide(
-                        color: Theme.of(context).primaryColor.withOpacity(.4)),
-                labelStyle: TextStyle(
-                  overflow: TextOverflow.ellipsis,
-                  color: _value == index
-                      ? Colors.white
-                      : APIService.appSecondaryColor,
-                ),
-                label: SizedBox(
-                  width: double.infinity,
-                  child: Text(formItem.controlText ?? ""),
-                ),
-                selected: _value == index,
-                onSelected: (bool selected) {
-                  if (_value != index) {
-                    setState(() {
-                      _value = selected ? index : null;
-                    });
-                  }
+              child:
+             // ChoiceChip(
+             //    side: _value == index
+             //        ? null
+             //        : BorderSide(
+             //            color: Theme.of(context).primaryColor.withOpacity(.4)),
+             //    labelStyle: TextStyle(
+             //      overflow: TextOverflow.ellipsis,
+             //      color: _value == index
+             //          ? Colors.white
+             //          : APIService.appSecondaryColor,
+             //    ),
+             //    label: SizedBox(
+             //      width: double.infinity,
+             //      child: Text(formItem.controlText ?? ""),
+             //    ),
+             //    selected: _value == index,
+             //    onSelected: (bool selected) {
+             //      if (_value != index) {
+             //        setState(() {
+             //          _value = selected ? index : null;
+             //        });
+             //      }
+             //    },
+             //  )
+
+              RadioListTile<int>(
+                title: Text(formItem.controlText ?? "",),
+                value: index,
+                groupValue: selectedValue,
+                onChanged: (value) {
+                  setState(() {
+                    selectedValue = value!;
+                  });
                 },
-              ))));
+              ),
+
+          )));
     });
   }
 
