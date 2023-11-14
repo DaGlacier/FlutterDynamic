@@ -128,41 +128,44 @@ class _RadioWidgetListState extends State<RadioWidgetList> {
           child: Container(
               margin: const EdgeInsets.only(right: 2),
               child:
-             // ChoiceChip(
-             //    side: _value == index
-             //        ? null
-             //        : BorderSide(
-             //            color: Theme.of(context).primaryColor.withOpacity(.4)),
-             //    labelStyle: TextStyle(
-             //      overflow: TextOverflow.ellipsis,
-             //      color: _value == index
-             //          ? Colors.white
-             //          : APIService.appSecondaryColor,
-             //    ),
-             //    label: SizedBox(
-             //      width: double.infinity,
-             //      child: Text(formItem.controlText ?? ""),
-             //    ),
-             //    selected: _value == index,
-             //    onSelected: (bool selected) {
-             //      if (_value != index) {
-             //        setState(() {
-             //          _value = selected ? index : null;
-             //        });
-             //      }
-             //    },
-             //  )
-
-              RadioListTile<int>(
-                title: Text(formItem.controlText ?? "",),
-                value: index,
-                groupValue: selectedValue,
-                onChanged: (value) {
-                  setState(() {
-                    selectedValue = value!;
-                  });
+             ChoiceChip(
+                side: _value == index
+                    ? null
+                    : BorderSide(
+                        color: Theme.of(context).primaryColor.withOpacity(.4)),
+                labelStyle: TextStyle(
+                  overflow: TextOverflow.ellipsis,
+                  color: _value == index
+                      ? Colors.white
+                      : APIService.appPrimaryColor,
+                ),
+                label: SizedBox(
+                  width: double.infinity,
+                  child: Text(formItem.controlText ?? ""),
+                ),
+                selected: _value == index,
+                onSelected: (bool selected) {
+                  if (_value != index) {
+                    setState(() {
+                      _value = selected ? index : null;
+                    });
+                  }
                 },
-              ),
+              )
+
+              // RadioListTile<int>(
+              //   title: Text(formItem.controlText ?? "", style: const TextStyle(
+              //     fontSize: 16,
+              //     color: Colors.black
+              //   ),),
+              //   value: index,
+              //   groupValue: selectedValue,
+              //   onChanged: (value) {
+              //     setState(() {
+              //       selectedValue = value!;
+              //     });
+              //   },
+              // ),
 
           )));
     });
