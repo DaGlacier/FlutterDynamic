@@ -155,16 +155,18 @@ class _RadioWidgetListState extends State<RadioWidgetList> {
 
               RadioListTile<int>(
                 title: Text(formItem.controlText ?? "", style: const TextStyle(
-                  fontSize: 16,
+                  fontSize: 14,
                   color: Colors.black
                 ),),
                 value: index,
-                groupValue: selectedValue,
+                groupValue: _value,
                 activeColor: APIService.appPrimaryColor,
                 onChanged: (value) {
-                  setState(() {
-                    selectedValue = value!;
-                  });
+                  if (value != index) {
+                    setState(() {
+                      _value = value;
+                    });
+                  }
                 },
               ),
 
