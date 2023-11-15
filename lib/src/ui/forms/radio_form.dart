@@ -158,7 +158,7 @@ class _RadioWidgetListState extends State<RadioWidgetList> {
                   fontSize: 14,
                   color: Colors.black
                 ),),
-                value: index,
+                value: _value??index,
                 groupValue: _value,
                 activeColor: APIService.appPrimaryColor,
                 onChanged: (value) {
